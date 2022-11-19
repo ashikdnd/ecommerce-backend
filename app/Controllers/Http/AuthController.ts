@@ -20,13 +20,4 @@ export default class AuthController {
       userInfo: userInfo,
     })
   }
-
-  async login({ request, response }) {
-    const params = request.all()
-    password = params.password
-
-    // check if email exists in the table
-    // if yes, fetch the record
-    // compare user provided pass with table password
-  }
 }
