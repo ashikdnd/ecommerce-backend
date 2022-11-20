@@ -19,11 +19,15 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import Database from '@ioc:Adonis/Lucid/Database'
-import Hash from '@ioc:Adonis/Core/Hash'
 
 Route.group(() => {
   Route.post('/auth/register', 'AuthController.signUp')
+  Route.post('/auth/login', 'AuthController.login')
+  Route.post('logout', 'AuthController.logout')
+
+  Route.get('products', 'ProductsController.getProducts')
 }).prefix('api/v1')
 
-Route.group(() => {}).prefix('/api/v2')
+Route.get('about-us', () => {
+  return 'Hello'
+})
