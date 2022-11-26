@@ -28,6 +28,12 @@ Route.group(() => {
   Route.get('products', 'ProductsController.getProducts')
 }).prefix('api/v1')
 
+Route.group(() => {
+  Route.post('product/save', 'ProductsController.saveProduct')
+})
+  .prefix('api/v1/admin')
+  .middleware(['auth:api'])
+
 Route.get('about-us', () => {
   return 'Hello'
 })
